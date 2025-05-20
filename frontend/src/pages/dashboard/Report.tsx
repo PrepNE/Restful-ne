@@ -51,12 +51,26 @@ const Reports = () => {
           });
 
         // Date range filter
-        const matchesDateRange =
-          !dateRange ||
-          !dateRange[0] ||
-          !dateRange[1] ||
-          (dayjs(record.checkInTime).isAfter(dateRange[0]) &&
-            (!record.checkOutTime || dayjs(record.checkOutTime).isBefore(dateRange[1])));
+        let matchesDateRange = true;
+        
+        if (dateRange && dateRange[0] && dateRange[1]) {
+          const startDate = dateRange[0].startOf('day');
+          const endDate = dateRange[1].endOf('day');
+          const checkInDate = dayjs(record.checkInTime);
+          
+          // Check if check-in date is within range
+          matchesDateRange = checkInDate.isAfter(startDate) && checkInDate.isBefore(endDate);
+          
+          // For outgoing records, also check checkout time if it exists
+          if (record.checkOutTime) {
+            const checkOutDate = dayjs(record.checkOutTime);
+            // We consider a record valid if either check-in or check-out is within range
+            // Or if the parking spans across our date range
+            matchesDateRange = matchesDateRange || 
+              (checkOutDate.isAfter(startDate) && checkOutDate.isBefore(endDate)) ||
+              (checkInDate.isBefore(startDate) && checkOutDate.isAfter(endDate));
+          }
+        }
 
         return matchesSearch && matchesDateRange;
       });
@@ -98,7 +112,6 @@ const Reports = () => {
     {
       title: "Duration (so far)",
       key: "duration",
-      //@ts-ignore
       render: (_, record: ParkingRecord) => {
         const now = dayjs();
         const checkIn = dayjs(record.checkInTime);
@@ -171,8 +184,17 @@ const Reports = () => {
     setDateRange(dates);
   };
 
+  const handleSearch = (value: string) => {
+    setSearchQuery(value);
+  };
+
   const handleRefresh = () => {
     fetchAllRecords();
+  };
+
+  const handleClearFilters = () => {
+    setSearchQuery("");
+    setDateRange(null);
   };
 
   return (
@@ -181,13 +203,22 @@ const Reports = () => {
       <div className="mb-4">
         <Space direction="horizontal" size="middle" className="w-full flex justify-between flex-wrap">
           <Input
-            placeholder="Search by plate number..."
+            placeholder="Search plate number..."
             prefix={<SearchOutlined />}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="max-w-xs"
+            value={searchQuery}
+            onChange={(e) => handleSearch(e.target.value)}
+            style={{ width: 250 }}
+            allowClear
           />
           <Space>
-            <RangePicker onChange={handleDateRangeChange} />
+            <RangePicker 
+              onChange={handleDateRangeChange} 
+              value={dateRange}
+              showTime={{ format: "HH:mm" }}
+              format="YYYY-MM-DD HH:mm"
+              placeholder={["Start Date", "End Date"]}
+            />
+            <Button onClick={handleClearFilters}>Clear Filters</Button>
             <Button type="primary" onClick={handleRefresh}>
               Refresh
             </Button>
@@ -199,6 +230,16 @@ const Reports = () => {
         <TabPane tab="Incoming Cars" key="incoming">
           <div className="bg-white p-4 rounded-md shadow">
             <h2 className="text-lg font-semibold mb-4">Currently Parked Vehicles</h2>
+            <div className="mb-2">
+              {dateRange && dateRange[0] && dateRange[1] && (
+                <Tag color="blue">
+                  Date Filter: {dateRange[0].format('YYYY-MM-DD HH:mm')} to {dateRange[1].format('YYYY-MM-DD HH:mm')}
+                </Tag>
+              )}
+              {filteredIncomingRecords.length > 0 && (
+                <Tag color="green">Showing {filteredIncomingRecords.length} vehicles</Tag>
+              )}
+            </div>
             <DataTable<ParkingRecord>
               data={filteredIncomingRecords}
               searchQuery={searchQuery}
@@ -210,6 +251,16 @@ const Reports = () => {
         <TabPane tab="Outgoing Cars" key="outgoing">
           <div className="bg-white p-4 rounded-md shadow">
             <h2 className="text-lg font-semibold mb-4">Completed Parking Sessions</h2>
+            <div className="mb-2">
+              {dateRange && dateRange[0] && dateRange[1] && (
+                <Tag color="blue">
+                  Date Filter: {dateRange[0].format('YYYY-MM-DD HH:mm')} to {dateRange[1].format('YYYY-MM-DD HH:mm')}
+                </Tag>
+              )}
+              {filteredOutgoingRecords.length > 0 && (
+                <Tag color="green">Showing {filteredOutgoingRecords.length} sessions</Tag>
+              )}
+            </div>
             <DataTable<ParkingRecord>
               data={filteredOutgoingRecords}
               searchQuery={searchQuery}
