@@ -1,0 +1,68 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(uuid())
+  firstName String
+  lastName  String
+  email     String   @unique
+  role      Role     @default(PARKING_ATTENDANT)
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  vehicle Vehicle[]
+}
+
+model Vehicle {
+  id           String @id @default(uuid())
+  plateNumber  String @unique
+  manufacturer String
+  model        String
+  color        String
+  userId       String
+  owner        User   @relation(fields: [userId], references: [id])
+
+  parkingRecords ParkingRecord[]
+}
+
+model ParkingLot {
+  id         String @id @default(uuid())
+  code       String @unique
+  name       String
+  location   String
+  capacity   Int
+  hourlyRate Int
+
+  parkingRecords ParkingRecord[]
+}
+
+model ParkingRecord {
+  id           String      @id @default(uuid())
+  checkInTime  DateTime    @default(now())
+  checkOutTime DateTime?
+  duration     BigInt?
+  amountPaid   Float?
+  vehicleId    String
+  vehicle      Vehicle     @relation(fields: [vehicleId], references: [id])
+  parkingLot   ParkingLot? @relation(fields: [parkingLotId], references: [id])
+  parkingLotId String?
+}
+
+enum Role {
+  ADMIN
+  PARKING_ATTENDANT
+}
