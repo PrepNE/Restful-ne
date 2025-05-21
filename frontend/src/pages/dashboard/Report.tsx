@@ -34,10 +34,9 @@ const Reports = () => {
   };
 
   useEffect(() => {
-    // Filter records based on search query and date range
+
     if (parkingRecords.length > 0) {
       const filtered = parkingRecords.filter((record) => {
-        // Search query filter
         const matchesSearch =
           !searchQuery ||
           Object.values(record).some((val) => {
@@ -49,8 +48,6 @@ const Reports = () => {
             }
             return false;
           });
-
-        // Date range filter
         let matchesDateRange = true;
         
         if (dateRange && dateRange[0] && dateRange[1]) {
@@ -58,14 +55,11 @@ const Reports = () => {
           const endDate = dateRange[1].endOf('day');
           const checkInDate = dayjs(record.checkInTime);
           
-          // Check if check-in date is within range
+
           matchesDateRange = checkInDate.isAfter(startDate) && checkInDate.isBefore(endDate);
           
-          // For outgoing records, also check checkout time if it exists
           if (record.checkOutTime) {
             const checkOutDate = dayjs(record.checkOutTime);
-            // We consider a record valid if either check-in or check-out is within range
-            // Or if the parking spans across our date range
             matchesDateRange = matchesDateRange || 
               (checkOutDate.isAfter(startDate) && checkOutDate.isBefore(endDate)) ||
               (checkInDate.isBefore(startDate) && checkOutDate.isAfter(endDate));
@@ -75,7 +69,7 @@ const Reports = () => {
         return matchesSearch && matchesDateRange;
       });
 
-      // Incoming cars are those that have checked in but not checked out yet
+
       const incoming = filtered.filter((record) => !record.checkOutTime);
       setFilteredIncomingRecords(incoming);
 
@@ -112,6 +106,7 @@ const Reports = () => {
     {
       title: "Duration (so far)",
       key: "duration",
+      //@ts-ignore
       render: (_, record: ParkingRecord) => {
         const now = dayjs();
         const checkIn = dayjs(record.checkInTime);
