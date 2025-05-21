@@ -137,7 +137,9 @@ exports.Prisma.VehicleScalarFieldEnum = {
   manufacturer: 'manufacturer',
   model: 'model',
   color: 'color',
-  userId: 'userId'
+  userId: 'userId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.ParkingLotScalarFieldEnum = {
@@ -146,7 +148,9 @@ exports.Prisma.ParkingLotScalarFieldEnum = {
   name: 'name',
   location: 'location',
   capacity: 'capacity',
-  hourlyRate: 'hourlyRate'
+  hourlyRate: 'hourlyRate',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.ParkingRecordScalarFieldEnum = {
@@ -156,7 +160,9 @@ exports.Prisma.ParkingRecordScalarFieldEnum = {
   duration: 'duration',
   amountPaid: 'amountPaid',
   vehicleId: 'vehicleId',
-  parkingLotId: 'parkingLotId'
+  parkingLotId: 'parkingLotId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
 };
 
 exports.Prisma.SortOrder = {
