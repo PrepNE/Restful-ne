@@ -2377,6 +2377,8 @@ export namespace Prisma {
     model: string | null
     color: string | null
     userId: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type VehicleMaxAggregateOutputType = {
@@ -2386,6 +2388,8 @@ export namespace Prisma {
     model: string | null
     color: string | null
     userId: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type VehicleCountAggregateOutputType = {
@@ -2395,6 +2399,8 @@ export namespace Prisma {
     model: number
     color: number
     userId: number
+    createdAt: number
+    updatedAt: number
     _all: number
   }
 
@@ -2406,6 +2412,8 @@ export namespace Prisma {
     model?: true
     color?: true
     userId?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type VehicleMaxAggregateInputType = {
@@ -2415,6 +2423,8 @@ export namespace Prisma {
     model?: true
     color?: true
     userId?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type VehicleCountAggregateInputType = {
@@ -2424,6 +2434,8 @@ export namespace Prisma {
     model?: true
     color?: true
     userId?: true
+    createdAt?: true
+    updatedAt?: true
     _all?: true
   }
 
@@ -2506,6 +2518,8 @@ export namespace Prisma {
     model: string
     color: string
     userId: string
+    createdAt: Date
+    updatedAt: Date
     _count: VehicleCountAggregateOutputType | null
     _min: VehicleMinAggregateOutputType | null
     _max: VehicleMaxAggregateOutputType | null
@@ -2532,6 +2546,8 @@ export namespace Prisma {
     model?: boolean
     color?: boolean
     userId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     owner?: boolean | UserDefaultArgs<ExtArgs>
     parkingRecords?: boolean | Vehicle$parkingRecordsArgs<ExtArgs>
     _count?: boolean | VehicleCountOutputTypeDefaultArgs<ExtArgs>
@@ -2544,6 +2560,8 @@ export namespace Prisma {
     model?: boolean
     color?: boolean
     userId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     owner?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["vehicle"]>
 
@@ -2554,6 +2572,8 @@ export namespace Prisma {
     model?: boolean
     color?: boolean
     userId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     owner?: boolean | UserDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["vehicle"]>
 
@@ -2564,9 +2584,11 @@ export namespace Prisma {
     model?: boolean
     color?: boolean
     userId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
   }
 
-  export type VehicleOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "plateNumber" | "manufacturer" | "model" | "color" | "userId", ExtArgs["result"]["vehicle"]>
+  export type VehicleOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "plateNumber" | "manufacturer" | "model" | "color" | "userId" | "createdAt" | "updatedAt", ExtArgs["result"]["vehicle"]>
   export type VehicleInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     owner?: boolean | UserDefaultArgs<ExtArgs>
     parkingRecords?: boolean | Vehicle$parkingRecordsArgs<ExtArgs>
@@ -2592,6 +2614,8 @@ export namespace Prisma {
       model: string
       color: string
       userId: string
+      createdAt: Date
+      updatedAt: Date
     }, ExtArgs["result"]["vehicle"]>
     composites: {}
   }
@@ -3023,6 +3047,8 @@ export namespace Prisma {
     readonly model: FieldRef<"Vehicle", 'String'>
     readonly color: FieldRef<"Vehicle", 'String'>
     readonly userId: FieldRef<"Vehicle", 'String'>
+    readonly createdAt: FieldRef<"Vehicle", 'DateTime'>
+    readonly updatedAt: FieldRef<"Vehicle", 'DateTime'>
   }
     
 
@@ -3490,6 +3516,8 @@ export namespace Prisma {
     location: string | null
     capacity: number | null
     hourlyRate: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type ParkingLotMaxAggregateOutputType = {
@@ -3499,6 +3527,8 @@ export namespace Prisma {
     location: string | null
     capacity: number | null
     hourlyRate: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type ParkingLotCountAggregateOutputType = {
@@ -3508,6 +3538,8 @@ export namespace Prisma {
     location: number
     capacity: number
     hourlyRate: number
+    createdAt: number
+    updatedAt: number
     _all: number
   }
 
@@ -3529,6 +3561,8 @@ export namespace Prisma {
     location?: true
     capacity?: true
     hourlyRate?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type ParkingLotMaxAggregateInputType = {
@@ -3538,6 +3572,8 @@ export namespace Prisma {
     location?: true
     capacity?: true
     hourlyRate?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type ParkingLotCountAggregateInputType = {
@@ -3547,6 +3583,8 @@ export namespace Prisma {
     location?: true
     capacity?: true
     hourlyRate?: true
+    createdAt?: true
+    updatedAt?: true
     _all?: true
   }
 
@@ -3643,6 +3681,8 @@ export namespace Prisma {
     location: string
     capacity: number
     hourlyRate: number
+    createdAt: Date
+    updatedAt: Date
     _count: ParkingLotCountAggregateOutputType | null
     _avg: ParkingLotAvgAggregateOutputType | null
     _sum: ParkingLotSumAggregateOutputType | null
@@ -3671,6 +3711,8 @@ export namespace Prisma {
     location?: boolean
     capacity?: boolean
     hourlyRate?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     parkingRecords?: boolean | ParkingLot$parkingRecordsArgs<ExtArgs>
     _count?: boolean | ParkingLotCountOutputTypeDefaultArgs<ExtArgs>
   }, ExtArgs["result"]["parkingLot"]>
@@ -3682,6 +3724,8 @@ export namespace Prisma {
     location?: boolean
     capacity?: boolean
     hourlyRate?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
   }, ExtArgs["result"]["parkingLot"]>
 
   export type ParkingLotSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
@@ -3691,6 +3735,8 @@ export namespace Prisma {
     location?: boolean
     capacity?: boolean
     hourlyRate?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
   }, ExtArgs["result"]["parkingLot"]>
 
   export type ParkingLotSelectScalar = {
@@ -3700,9 +3746,11 @@ export namespace Prisma {
     location?: boolean
     capacity?: boolean
     hourlyRate?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
   }
 
-  export type ParkingLotOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "code" | "name" | "location" | "capacity" | "hourlyRate", ExtArgs["result"]["parkingLot"]>
+  export type ParkingLotOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "code" | "name" | "location" | "capacity" | "hourlyRate" | "createdAt" | "updatedAt", ExtArgs["result"]["parkingLot"]>
   export type ParkingLotInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     parkingRecords?: boolean | ParkingLot$parkingRecordsArgs<ExtArgs>
     _count?: boolean | ParkingLotCountOutputTypeDefaultArgs<ExtArgs>
@@ -3722,6 +3770,8 @@ export namespace Prisma {
       location: string
       capacity: number
       hourlyRate: number
+      createdAt: Date
+      updatedAt: Date
     }, ExtArgs["result"]["parkingLot"]>
     composites: {}
   }
@@ -4152,6 +4202,8 @@ export namespace Prisma {
     readonly location: FieldRef<"ParkingLot", 'String'>
     readonly capacity: FieldRef<"ParkingLot", 'Int'>
     readonly hourlyRate: FieldRef<"ParkingLot", 'Int'>
+    readonly createdAt: FieldRef<"ParkingLot", 'DateTime'>
+    readonly updatedAt: FieldRef<"ParkingLot", 'DateTime'>
   }
     
 
@@ -4612,6 +4664,8 @@ export namespace Prisma {
     amountPaid: number | null
     vehicleId: string | null
     parkingLotId: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type ParkingRecordMaxAggregateOutputType = {
@@ -4622,6 +4676,8 @@ export namespace Prisma {
     amountPaid: number | null
     vehicleId: string | null
     parkingLotId: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
   }
 
   export type ParkingRecordCountAggregateOutputType = {
@@ -4632,6 +4688,8 @@ export namespace Prisma {
     amountPaid: number
     vehicleId: number
     parkingLotId: number
+    createdAt: number
+    updatedAt: number
     _all: number
   }
 
@@ -4654,6 +4712,8 @@ export namespace Prisma {
     amountPaid?: true
     vehicleId?: true
     parkingLotId?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type ParkingRecordMaxAggregateInputType = {
@@ -4664,6 +4724,8 @@ export namespace Prisma {
     amountPaid?: true
     vehicleId?: true
     parkingLotId?: true
+    createdAt?: true
+    updatedAt?: true
   }
 
   export type ParkingRecordCountAggregateInputType = {
@@ -4674,6 +4736,8 @@ export namespace Prisma {
     amountPaid?: true
     vehicleId?: true
     parkingLotId?: true
+    createdAt?: true
+    updatedAt?: true
     _all?: true
   }
 
@@ -4771,6 +4835,8 @@ export namespace Prisma {
     amountPaid: number | null
     vehicleId: string
     parkingLotId: string | null
+    createdAt: Date
+    updatedAt: Date
     _count: ParkingRecordCountAggregateOutputType | null
     _avg: ParkingRecordAvgAggregateOutputType | null
     _sum: ParkingRecordSumAggregateOutputType | null
@@ -4800,6 +4866,8 @@ export namespace Prisma {
     amountPaid?: boolean
     vehicleId?: boolean
     parkingLotId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     vehicle?: boolean | VehicleDefaultArgs<ExtArgs>
     parkingLot?: boolean | ParkingRecord$parkingLotArgs<ExtArgs>
   }, ExtArgs["result"]["parkingRecord"]>
@@ -4812,6 +4880,8 @@ export namespace Prisma {
     amountPaid?: boolean
     vehicleId?: boolean
     parkingLotId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     vehicle?: boolean | VehicleDefaultArgs<ExtArgs>
     parkingLot?: boolean | ParkingRecord$parkingLotArgs<ExtArgs>
   }, ExtArgs["result"]["parkingRecord"]>
@@ -4824,6 +4894,8 @@ export namespace Prisma {
     amountPaid?: boolean
     vehicleId?: boolean
     parkingLotId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
     vehicle?: boolean | VehicleDefaultArgs<ExtArgs>
     parkingLot?: boolean | ParkingRecord$parkingLotArgs<ExtArgs>
   }, ExtArgs["result"]["parkingRecord"]>
@@ -4836,9 +4908,11 @@ export namespace Prisma {
     amountPaid?: boolean
     vehicleId?: boolean
     parkingLotId?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
   }
 
-  export type ParkingRecordOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "checkInTime" | "checkOutTime" | "duration" | "amountPaid" | "vehicleId" | "parkingLotId", ExtArgs["result"]["parkingRecord"]>
+  export type ParkingRecordOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "checkInTime" | "checkOutTime" | "duration" | "amountPaid" | "vehicleId" | "parkingLotId" | "createdAt" | "updatedAt", ExtArgs["result"]["parkingRecord"]>
   export type ParkingRecordInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     vehicle?: boolean | VehicleDefaultArgs<ExtArgs>
     parkingLot?: boolean | ParkingRecord$parkingLotArgs<ExtArgs>
@@ -4866,6 +4940,8 @@ export namespace Prisma {
       amountPaid: number | null
       vehicleId: string
       parkingLotId: string | null
+      createdAt: Date
+      updatedAt: Date
     }, ExtArgs["result"]["parkingRecord"]>
     composites: {}
   }
@@ -5298,6 +5374,8 @@ export namespace Prisma {
     readonly amountPaid: FieldRef<"ParkingRecord", 'Float'>
     readonly vehicleId: FieldRef<"ParkingRecord", 'String'>
     readonly parkingLotId: FieldRef<"ParkingRecord", 'String'>
+    readonly createdAt: FieldRef<"ParkingRecord", 'DateTime'>
+    readonly updatedAt: FieldRef<"ParkingRecord", 'DateTime'>
   }
     
 
@@ -5765,7 +5843,9 @@ export namespace Prisma {
     manufacturer: 'manufacturer',
     model: 'model',
     color: 'color',
-    userId: 'userId'
+    userId: 'userId',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
   };
 
   export type VehicleScalarFieldEnum = (typeof VehicleScalarFieldEnum)[keyof typeof VehicleScalarFieldEnum]
@@ -5777,7 +5857,9 @@ export namespace Prisma {
     name: 'name',
     location: 'location',
     capacity: 'capacity',
-    hourlyRate: 'hourlyRate'
+    hourlyRate: 'hourlyRate',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
   };
 
   export type ParkingLotScalarFieldEnum = (typeof ParkingLotScalarFieldEnum)[keyof typeof ParkingLotScalarFieldEnum]
@@ -5790,7 +5872,9 @@ export namespace Prisma {
     duration: 'duration',
     amountPaid: 'amountPaid',
     vehicleId: 'vehicleId',
-    parkingLotId: 'parkingLotId'
+    parkingLotId: 'parkingLotId',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
   };
 
   export type ParkingRecordScalarFieldEnum = (typeof ParkingRecordScalarFieldEnum)[keyof typeof ParkingRecordScalarFieldEnum]
@@ -5992,6 +6076,8 @@ export namespace Prisma {
     model?: StringFilter<"Vehicle"> | string
     color?: StringFilter<"Vehicle"> | string
     userId?: StringFilter<"Vehicle"> | string
+    createdAt?: DateTimeFilter<"Vehicle"> | Date | string
+    updatedAt?: DateTimeFilter<"Vehicle"> | Date | string
     owner?: XOR<UserScalarRelationFilter, UserWhereInput>
     parkingRecords?: ParkingRecordListRelationFilter
   }
@@ -6003,6 +6089,8 @@ export namespace Prisma {
     model?: SortOrder
     color?: SortOrder
     userId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     owner?: UserOrderByWithRelationInput
     parkingRecords?: ParkingRecordOrderByRelationAggregateInput
   }
@@ -6017,6 +6105,8 @@ export namespace Prisma {
     model?: StringFilter<"Vehicle"> | string
     color?: StringFilter<"Vehicle"> | string
     userId?: StringFilter<"Vehicle"> | string
+    createdAt?: DateTimeFilter<"Vehicle"> | Date | string
+    updatedAt?: DateTimeFilter<"Vehicle"> | Date | string
     owner?: XOR<UserScalarRelationFilter, UserWhereInput>
     parkingRecords?: ParkingRecordListRelationFilter
   }, "id" | "plateNumber">
@@ -6028,6 +6118,8 @@ export namespace Prisma {
     model?: SortOrder
     color?: SortOrder
     userId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     _count?: VehicleCountOrderByAggregateInput
     _max?: VehicleMaxOrderByAggregateInput
     _min?: VehicleMinOrderByAggregateInput
@@ -6043,6 +6135,8 @@ export namespace Prisma {
     model?: StringWithAggregatesFilter<"Vehicle"> | string
     color?: StringWithAggregatesFilter<"Vehicle"> | string
     userId?: StringWithAggregatesFilter<"Vehicle"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"Vehicle"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Vehicle"> | Date | string
   }
 
   export type ParkingLotWhereInput = {
@@ -6055,6 +6149,8 @@ export namespace Prisma {
     location?: StringFilter<"ParkingLot"> | string
     capacity?: IntFilter<"ParkingLot"> | number
     hourlyRate?: IntFilter<"ParkingLot"> | number
+    createdAt?: DateTimeFilter<"ParkingLot"> | Date | string
+    updatedAt?: DateTimeFilter<"ParkingLot"> | Date | string
     parkingRecords?: ParkingRecordListRelationFilter
   }
 
@@ -6065,6 +6161,8 @@ export namespace Prisma {
     location?: SortOrder
     capacity?: SortOrder
     hourlyRate?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     parkingRecords?: ParkingRecordOrderByRelationAggregateInput
   }
 
@@ -6078,6 +6176,8 @@ export namespace Prisma {
     location?: StringFilter<"ParkingLot"> | string
     capacity?: IntFilter<"ParkingLot"> | number
     hourlyRate?: IntFilter<"ParkingLot"> | number
+    createdAt?: DateTimeFilter<"ParkingLot"> | Date | string
+    updatedAt?: DateTimeFilter<"ParkingLot"> | Date | string
     parkingRecords?: ParkingRecordListRelationFilter
   }, "id" | "code">
 
@@ -6088,6 +6188,8 @@ export namespace Prisma {
     location?: SortOrder
     capacity?: SortOrder
     hourlyRate?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     _count?: ParkingLotCountOrderByAggregateInput
     _avg?: ParkingLotAvgOrderByAggregateInput
     _max?: ParkingLotMaxOrderByAggregateInput
@@ -6105,6 +6207,8 @@ export namespace Prisma {
     location?: StringWithAggregatesFilter<"ParkingLot"> | string
     capacity?: IntWithAggregatesFilter<"ParkingLot"> | number
     hourlyRate?: IntWithAggregatesFilter<"ParkingLot"> | number
+    createdAt?: DateTimeWithAggregatesFilter<"ParkingLot"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"ParkingLot"> | Date | string
   }
 
   export type ParkingRecordWhereInput = {
@@ -6118,6 +6222,8 @@ export namespace Prisma {
     amountPaid?: FloatNullableFilter<"ParkingRecord"> | number | null
     vehicleId?: StringFilter<"ParkingRecord"> | string
     parkingLotId?: StringNullableFilter<"ParkingRecord"> | string | null
+    createdAt?: DateTimeFilter<"ParkingRecord"> | Date | string
+    updatedAt?: DateTimeFilter<"ParkingRecord"> | Date | string
     vehicle?: XOR<VehicleScalarRelationFilter, VehicleWhereInput>
     parkingLot?: XOR<ParkingLotNullableScalarRelationFilter, ParkingLotWhereInput> | null
   }
@@ -6130,6 +6236,8 @@ export namespace Prisma {
     amountPaid?: SortOrderInput | SortOrder
     vehicleId?: SortOrder
     parkingLotId?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     vehicle?: VehicleOrderByWithRelationInput
     parkingLot?: ParkingLotOrderByWithRelationInput
   }
@@ -6145,6 +6253,8 @@ export namespace Prisma {
     amountPaid?: FloatNullableFilter<"ParkingRecord"> | number | null
     vehicleId?: StringFilter<"ParkingRecord"> | string
     parkingLotId?: StringNullableFilter<"ParkingRecord"> | string | null
+    createdAt?: DateTimeFilter<"ParkingRecord"> | Date | string
+    updatedAt?: DateTimeFilter<"ParkingRecord"> | Date | string
     vehicle?: XOR<VehicleScalarRelationFilter, VehicleWhereInput>
     parkingLot?: XOR<ParkingLotNullableScalarRelationFilter, ParkingLotWhereInput> | null
   }, "id">
@@ -6157,6 +6267,8 @@ export namespace Prisma {
     amountPaid?: SortOrderInput | SortOrder
     vehicleId?: SortOrder
     parkingLotId?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
     _count?: ParkingRecordCountOrderByAggregateInput
     _avg?: ParkingRecordAvgOrderByAggregateInput
     _max?: ParkingRecordMaxOrderByAggregateInput
@@ -6175,6 +6287,8 @@ export namespace Prisma {
     amountPaid?: FloatNullableWithAggregatesFilter<"ParkingRecord"> | number | null
     vehicleId?: StringWithAggregatesFilter<"ParkingRecord"> | string
     parkingLotId?: StringNullableWithAggregatesFilter<"ParkingRecord"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"ParkingRecord"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"ParkingRecord"> | Date | string
   }
 
   export type UserCreateInput = {
@@ -6264,6 +6378,8 @@ export namespace Prisma {
     manufacturer: string
     model: string
     color: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
     owner: UserCreateNestedOneWithoutVehicleInput
     parkingRecords?: ParkingRecordCreateNestedManyWithoutVehicleInput
   }
@@ -6275,6 +6391,8 @@ export namespace Prisma {
     model: string
     color: string
     userId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
     parkingRecords?: ParkingRecordUncheckedCreateNestedManyWithoutVehicleInput
   }
 
@@ -6284,6 +6402,8 @@ export namespace Prisma {
     manufacturer?: StringFieldUpdateOperationsInput | string
     model?: StringFieldUpdateOperationsInput | string
     color?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     owner?: UserUpdateOneRequiredWithoutVehicleNestedInput
     parkingRecords?: ParkingRecordUpdateManyWithoutVehicleNestedInput
   }
@@ -6295,6 +6415,8 @@ export namespace Prisma {
     model?: StringFieldUpdateOperationsInput | string
     color?: StringFieldUpdateOperationsInput | string
     userId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     parkingRecords?: ParkingRecordUncheckedUpdateManyWithoutVehicleNestedInput
   }
 
@@ -6305,6 +6427,8 @@ export namespace Prisma {
     model: string
     color: string
     userId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type VehicleUpdateManyMutationInput = {
@@ -6313,6 +6437,8 @@ export namespace Prisma {
     manufacturer?: StringFieldUpdateOperationsInput | string
     model?: StringFieldUpdateOperationsInput | string
     color?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type VehicleUncheckedUpdateManyInput = {
@@ -6322,6 +6448,8 @@ export namespace Prisma {
     model?: StringFieldUpdateOperationsInput | string
     color?: StringFieldUpdateOperationsInput | string
     userId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ParkingLotCreateInput = {
@@ -6331,6 +6459,8 @@ export namespace Prisma {
     location: string
     capacity: number
     hourlyRate: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
     parkingRecords?: ParkingRecordCreateNestedManyWithoutParkingLotInput
   }
 
@@ -6341,6 +6471,8 @@ export namespace Prisma {
     location: string
     capacity: number
     hourlyRate: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
     parkingRecords?: ParkingRecordUncheckedCreateNestedManyWithoutParkingLotInput
   }
 
@@ -6351,6 +6483,8 @@ export namespace Prisma {
     location?: StringFieldUpdateOperationsInput | string
     capacity?: IntFieldUpdateOperationsInput | number
     hourlyRate?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     parkingRecords?: ParkingRecordUpdateManyWithoutParkingLotNestedInput
   }
 
@@ -6361,6 +6495,8 @@ export namespace Prisma {
     location?: StringFieldUpdateOperationsInput | string
     capacity?: IntFieldUpdateOperationsInput | number
     hourlyRate?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     parkingRecords?: ParkingRecordUncheckedUpdateManyWithoutParkingLotNestedInput
   }
 
@@ -6371,6 +6507,8 @@ export namespace Prisma {
     location: string
     capacity: number
     hourlyRate: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type ParkingLotUpdateManyMutationInput = {
@@ -6380,6 +6518,8 @@ export namespace Prisma {
     location?: StringFieldUpdateOperationsInput | string
     capacity?: IntFieldUpdateOperationsInput | number
     hourlyRate?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ParkingLotUncheckedUpdateManyInput = {
@@ -6389,6 +6529,8 @@ export namespace Prisma {
     location?: StringFieldUpdateOperationsInput | string
     capacity?: IntFieldUpdateOperationsInput | number
     hourlyRate?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ParkingRecordCreateInput = {
@@ -6397,6 +6539,8 @@ export namespace Prisma {
     checkOutTime?: Date | string | null
     duration?: bigint | number | null
     amountPaid?: number | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
     vehicle: VehicleCreateNestedOneWithoutParkingRecordsInput
     parkingLot?: ParkingLotCreateNestedOneWithoutParkingRecordsInput
   }
@@ -6409,6 +6553,8 @@ export namespace Prisma {
     amountPaid?: number | null
     vehicleId: string
     parkingLotId?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type ParkingRecordUpdateInput = {
@@ -6417,6 +6563,8 @@ export namespace Prisma {
     checkOutTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     duration?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     amountPaid?: NullableFloatFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     vehicle?: VehicleUpdateOneRequiredWithoutParkingRecordsNestedInput
     parkingLot?: ParkingLotUpdateOneWithoutParkingRecordsNestedInput
   }
@@ -6429,6 +6577,8 @@ export namespace Prisma {
     amountPaid?: NullableFloatFieldUpdateOperationsInput | number | null
     vehicleId?: StringFieldUpdateOperationsInput | string
     parkingLotId?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ParkingRecordCreateManyInput = {
@@ -6439,6 +6589,8 @@ export namespace Prisma {
     amountPaid?: number | null
     vehicleId: string
     parkingLotId?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type ParkingRecordUpdateManyMutationInput = {
@@ -6447,6 +6599,8 @@ export namespace Prisma {
     checkOutTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     duration?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     amountPaid?: NullableFloatFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ParkingRecordUncheckedUpdateManyInput = {
@@ -6457,6 +6611,8 @@ export namespace Prisma {
     amountPaid?: NullableFloatFieldUpdateOperationsInput | number | null
     vehicleId?: StringFieldUpdateOperationsInput | string
     parkingLotId?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type StringFilter<$PrismaModel = never> = {
@@ -6599,6 +6755,8 @@ export namespace Prisma {
     model?: SortOrder
     color?: SortOrder
     userId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type VehicleMaxOrderByAggregateInput = {
@@ -6608,6 +6766,8 @@ export namespace Prisma {
     model?: SortOrder
     color?: SortOrder
     userId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type VehicleMinOrderByAggregateInput = {
@@ -6617,6 +6777,8 @@ export namespace Prisma {
     model?: SortOrder
     color?: SortOrder
     userId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type IntFilter<$PrismaModel = never> = {
@@ -6637,6 +6799,8 @@ export namespace Prisma {
     location?: SortOrder
     capacity?: SortOrder
     hourlyRate?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type ParkingLotAvgOrderByAggregateInput = {
@@ -6651,6 +6815,8 @@ export namespace Prisma {
     location?: SortOrder
     capacity?: SortOrder
     hourlyRate?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type ParkingLotMinOrderByAggregateInput = {
@@ -6660,6 +6826,8 @@ export namespace Prisma {
     location?: SortOrder
     capacity?: SortOrder
     hourlyRate?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type ParkingLotSumOrderByAggregateInput = {
@@ -6754,6 +6922,8 @@ export namespace Prisma {
     amountPaid?: SortOrder
     vehicleId?: SortOrder
     parkingLotId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type ParkingRecordAvgOrderByAggregateInput = {
@@ -6769,6 +6939,8 @@ export namespace Prisma {
     amountPaid?: SortOrder
     vehicleId?: SortOrder
     parkingLotId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type ParkingRecordMinOrderByAggregateInput = {
@@ -6779,6 +6951,8 @@ export namespace Prisma {
     amountPaid?: SortOrder
     vehicleId?: SortOrder
     parkingLotId?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
   }
 
   export type ParkingRecordSumOrderByAggregateInput = {
@@ -7302,6 +7476,8 @@ export namespace Prisma {
     manufacturer: string
     model: string
     color: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
     parkingRecords?: ParkingRecordCreateNestedManyWithoutVehicleInput
   }
 
@@ -7311,6 +7487,8 @@ export namespace Prisma {
     manufacturer: string
     model: string
     color: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
     parkingRecords?: ParkingRecordUncheckedCreateNestedManyWithoutVehicleInput
   }
 
@@ -7350,6 +7528,8 @@ export namespace Prisma {
     model?: StringFilter<"Vehicle"> | string
     color?: StringFilter<"Vehicle"> | string
     userId?: StringFilter<"Vehicle"> | string
+    createdAt?: DateTimeFilter<"Vehicle"> | Date | string
+    updatedAt?: DateTimeFilter<"Vehicle"> | Date | string
   }
 
   export type UserCreateWithoutVehicleInput = {
@@ -7385,6 +7565,8 @@ export namespace Prisma {
     checkOutTime?: Date | string | null
     duration?: bigint | number | null
     amountPaid?: number | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
     parkingLot?: ParkingLotCreateNestedOneWithoutParkingRecordsInput
   }
 
@@ -7395,6 +7577,8 @@ export namespace Prisma {
     duration?: bigint | number | null
     amountPaid?: number | null
     parkingLotId?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type ParkingRecordCreateOrConnectWithoutVehicleInput = {
@@ -7467,6 +7651,8 @@ export namespace Prisma {
     amountPaid?: FloatNullableFilter<"ParkingRecord"> | number | null
     vehicleId?: StringFilter<"ParkingRecord"> | string
     parkingLotId?: StringNullableFilter<"ParkingRecord"> | string | null
+    createdAt?: DateTimeFilter<"ParkingRecord"> | Date | string
+    updatedAt?: DateTimeFilter<"ParkingRecord"> | Date | string
   }
 
   export type ParkingRecordCreateWithoutParkingLotInput = {
@@ -7475,6 +7661,8 @@ export namespace Prisma {
     checkOutTime?: Date | string | null
     duration?: bigint | number | null
     amountPaid?: number | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
     vehicle: VehicleCreateNestedOneWithoutParkingRecordsInput
   }
 
@@ -7485,6 +7673,8 @@ export namespace Prisma {
     duration?: bigint | number | null
     amountPaid?: number | null
     vehicleId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type ParkingRecordCreateOrConnectWithoutParkingLotInput = {
@@ -7519,6 +7709,8 @@ export namespace Prisma {
     manufacturer: string
     model: string
     color: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
     owner: UserCreateNestedOneWithoutVehicleInput
   }
 
@@ -7529,6 +7721,8 @@ export namespace Prisma {
     model: string
     color: string
     userId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type VehicleCreateOrConnectWithoutParkingRecordsInput = {
@@ -7543,6 +7737,8 @@ export namespace Prisma {
     location: string
     capacity: number
     hourlyRate: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type ParkingLotUncheckedCreateWithoutParkingRecordsInput = {
@@ -7552,6 +7748,8 @@ export namespace Prisma {
     location: string
     capacity: number
     hourlyRate: number
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type ParkingLotCreateOrConnectWithoutParkingRecordsInput = {
@@ -7576,6 +7774,8 @@ export namespace Prisma {
     manufacturer?: StringFieldUpdateOperationsInput | string
     model?: StringFieldUpdateOperationsInput | string
     color?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     owner?: UserUpdateOneRequiredWithoutVehicleNestedInput
   }
 
@@ -7586,6 +7786,8 @@ export namespace Prisma {
     model?: StringFieldUpdateOperationsInput | string
     color?: StringFieldUpdateOperationsInput | string
     userId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ParkingLotUpsertWithoutParkingRecordsInput = {
@@ -7606,6 +7808,8 @@ export namespace Prisma {
     location?: StringFieldUpdateOperationsInput | string
     capacity?: IntFieldUpdateOperationsInput | number
     hourlyRate?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ParkingLotUncheckedUpdateWithoutParkingRecordsInput = {
@@ -7615,6 +7819,8 @@ export namespace Prisma {
     location?: StringFieldUpdateOperationsInput | string
     capacity?: IntFieldUpdateOperationsInput | number
     hourlyRate?: IntFieldUpdateOperationsInput | number
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type VehicleCreateManyOwnerInput = {
@@ -7623,6 +7829,8 @@ export namespace Prisma {
     manufacturer: string
     model: string
     color: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type VehicleUpdateWithoutOwnerInput = {
@@ -7631,6 +7839,8 @@ export namespace Prisma {
     manufacturer?: StringFieldUpdateOperationsInput | string
     model?: StringFieldUpdateOperationsInput | string
     color?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     parkingRecords?: ParkingRecordUpdateManyWithoutVehicleNestedInput
   }
 
@@ -7640,6 +7850,8 @@ export namespace Prisma {
     manufacturer?: StringFieldUpdateOperationsInput | string
     model?: StringFieldUpdateOperationsInput | string
     color?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     parkingRecords?: ParkingRecordUncheckedUpdateManyWithoutVehicleNestedInput
   }
 
@@ -7649,6 +7861,8 @@ export namespace Prisma {
     manufacturer?: StringFieldUpdateOperationsInput | string
     model?: StringFieldUpdateOperationsInput | string
     color?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ParkingRecordCreateManyVehicleInput = {
@@ -7658,6 +7872,8 @@ export namespace Prisma {
     duration?: bigint | number | null
     amountPaid?: number | null
     parkingLotId?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type ParkingRecordUpdateWithoutVehicleInput = {
@@ -7666,6 +7882,8 @@ export namespace Prisma {
     checkOutTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     duration?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     amountPaid?: NullableFloatFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     parkingLot?: ParkingLotUpdateOneWithoutParkingRecordsNestedInput
   }
 
@@ -7676,6 +7894,8 @@ export namespace Prisma {
     duration?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     amountPaid?: NullableFloatFieldUpdateOperationsInput | number | null
     parkingLotId?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ParkingRecordUncheckedUpdateManyWithoutVehicleInput = {
@@ -7685,6 +7905,8 @@ export namespace Prisma {
     duration?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     amountPaid?: NullableFloatFieldUpdateOperationsInput | number | null
     parkingLotId?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ParkingRecordCreateManyParkingLotInput = {
@@ -7694,6 +7916,8 @@ export namespace Prisma {
     duration?: bigint | number | null
     amountPaid?: number | null
     vehicleId: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
   }
 
   export type ParkingRecordUpdateWithoutParkingLotInput = {
@@ -7702,6 +7926,8 @@ export namespace Prisma {
     checkOutTime?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
     duration?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     amountPaid?: NullableFloatFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     vehicle?: VehicleUpdateOneRequiredWithoutParkingRecordsNestedInput
   }
 
@@ -7712,6 +7938,8 @@ export namespace Prisma {
     duration?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     amountPaid?: NullableFloatFieldUpdateOperationsInput | number | null
     vehicleId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type ParkingRecordUncheckedUpdateManyWithoutParkingLotInput = {
@@ -7721,6 +7949,8 @@ export namespace Prisma {
     duration?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     amountPaid?: NullableFloatFieldUpdateOperationsInput | number | null
     vehicleId?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
 

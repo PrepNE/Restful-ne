@@ -1,3 +1,4 @@
+import useAuth from "@/hooks/useAuth";
 import { ParkingLot } from "@/types";
 import { Card } from "antd";
 import { MapPin } from "lucide-react";
@@ -15,6 +16,8 @@ const ParkingLotCard = ({
 }: ParkingLot) => {
   const occupancyPercent = (currentOccupancy / capacity) * 100;
   const isFull = currentOccupancy >= capacity;
+  const { user } = useAuth();
+  const isAdmin = user?.role === "ADMIN";
   return (
     <Card
       key={id}
@@ -37,17 +40,19 @@ const ParkingLotCard = ({
         <h1 className="text-base font-medium">{hourlyRate} RWF</h1>
       </div>
 
-       <div className="flex justify-between items-center mb-2">
+      <div className="flex justify-between items-center mb-2">
         <span className="text-sm text-gray-500">Occupancy</span>
         <span className="font-medium">{currentOccupancy} / {capacity}</span>
       </div>
 
-      <div className="h-2 bg-gray-200 rounded-full mt-2 overflow-hidden">
-        <div
-          className={`h-full ${isFull ? 'bg-red-500' : 'bg-blue-500'}`}
-          style={{ width: `${occupancyPercent}%` }}
-        />
-      </div>
+      {isAdmin && (
+        <div className="h-2 bg-gray-200 rounded-full mt-2 overflow-hidden">
+          <div
+            className={`h-full ${isFull ? 'bg-red-500' : 'bg-blue-500'}`}
+            style={{ width: `${occupancyPercent}%` }}
+          />
+        </div>
+      )}
     </Card>
   );
 };
